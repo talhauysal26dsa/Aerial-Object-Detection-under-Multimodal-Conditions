@@ -1,0 +1,105 @@
+{
+  "title": "Aerial Object Detection under Multimodal Conditions",
+  "classes": {
+    "airplane": {
+      "ours_ap5095": 0.5700168085141454,
+      "ours_ap50": 0.8495670299829572,
+      "comparator": "hf_keremberke_yolov8m_plane_detection",
+      "comp_ap5095": 0.10606932290919431,
+      "comp_ap50": 0.2979583993528408,
+      "advantage_images": [
+        "assets/images/rgb_adv/airplane_1.jpg",
+        "assets/images/rgb_adv/airplane_2.jpg",
+        "assets/images/rgb_adv/airplane_3.jpg"
+      ]
+    },
+    "bird": {
+      "ours_ap5095": 0.4242773373632965,
+      "ours_ap50": 0.7550100634457642,
+      "comparator": "coco_yolov8m",
+      "comp_ap5095": 0.22585459464561236,
+      "comp_ap50": 0.489866104429148,
+      "advantage_images": [
+        "assets/images/rgb_adv/bird_1.jpg",
+        "assets/images/rgb_adv/bird_2.jpg",
+        "assets/images/rgb_adv/bird_3.jpg"
+      ]
+    },
+    "drone": {
+      "ours_ap5095": 0.5359603770627488,
+      "ours_ap50": 0.8611664926329469,
+      "comparator": "hf_doguilmak_drone_detection_yolov8x",
+      "comp_ap5095": 0.1691563635178408,
+      "comp_ap50": 0.43344074432416346,
+      "advantage_images": [
+        "assets/images/rgb_adv/drone_1.jpg",
+        "assets/images/rgb_adv/drone_2.jpg",
+        "assets/images/rgb_adv/drone_3.jpg"
+      ]
+    },
+    "helicopter": {
+      "ours_ap5095": 0.5487940890129537,
+      "ours_ap50": 0.9540295833306869,
+      "comparator": "aerodetect",
+      "comp_ap5095": 0.2911539681583295,
+      "comp_ap50": 0.5757339911384896,
+      "advantage_images": [
+        "assets/images/rgb_adv/helicopter_1.jpg",
+        "assets/images/rgb_adv/helicopter_2.jpg",
+        "assets/images/rgb_adv/helicopter_3.jpg"
+      ]
+    }
+  },
+  "rgb_overall": {
+    "subset": "rgb_all",
+    "images": 280,
+    "target_classes": [
+      "airplane",
+      "bird",
+      "drone",
+      "helicopter"
+    ],
+    "ap50_95": 0.5124245607243191,
+    "ap50": 0.8401796435228175,
+    "ar100": 0.6165348759221999
+  },
+  "thermal_overall": {
+    "subset": "thermal_all",
+    "images": 280,
+    "target_classes": [
+      "airplane",
+      "bird",
+      "drone",
+      "helicopter"
+    ],
+    "ap50_95": 0.5781159360334138,
+    "ap50": 0.8796889084884766,
+    "ar100": 0.6447320307076376
+  },
+  "thermal_showcase": [
+    {
+      "image": "assets/images/thermal_showcase/thermal_1.jpg",
+      "score": 0.97900390625
+    },
+    {
+      "image": "assets/images/thermal_showcase/thermal_2.jpg",
+      "score": 0.95947265625
+    },
+    {
+      "image": "assets/images/thermal_showcase/thermal_3.jpg",
+      "score": 0.95166015625
+    },
+    {
+      "image": "assets/images/thermal_showcase/thermal_4.jpg",
+      "score": 0.9384765625
+    },
+    {
+      "image": "assets/images/thermal_showcase/thermal_5.jpg",
+      "score": 0.9326171875
+    },
+    {
+      "image": "assets/images/thermal_showcase/thermal_6.jpg",
+      "score": 0.93212890625
+    }
+  ]
+}

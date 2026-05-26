@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aerial Object Detection under Multimodal Conditions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="kicker">Graduation Thesis Project</p>
+      <h1>Aerial Object Detection under Multimodal Conditions</h1>
+      <p class="lead">Benchmarking RGB and white-hot thermal detection for <strong>airplane</strong>, <strong>bird</strong>, <strong>drone</strong>, and <strong>helicopter</strong> with cross-model comparisons.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Abstract</h2>
+      <p>
+        We study aerial object detection under multimodal conditions using RGB and white-hot thermal imagery. Our detector is trained and tuned for four classes (airplane, bird, drone, helicopter) and evaluated against open-source external checkpoints under identical test subsets. We report class-wise AP50-95 and AP50 metrics, provide overlap-class fairness evaluations, and show qualitative examples where our model detects targets missed by external alternatives. Results indicate robust gains for our approach in both class-specific and multimodal settings.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Metrics</h2>
+      <div class="cards" id="metricCards"></div>
+    </section>
+
+    <section>
+      <h2>Class-wise Comparison (AP50-95)</h2>
+      <canvas id="chartAp95"></canvas>
+    </section>
+
+    <section>
+      <h2>Class-wise Comparison (AP50)</h2>
+      <canvas id="chartAp50"></canvas>
+    </section>
+
+    <section>
+      <h2>RGB Cases: Ours Detects, Comparator Misses</h2>
+      <p>Examples selected automatically from class-only RGB test subsets using IoU-based TP/FP matching (IoU ≥ 0.5).</p>
+      <div id="rgbGalleries"></div>
+    </section>
+
+    <section>
+      <h2>White-hot Thermal Showcase (Ours)</h2>
+      <p>Sample thermal detections illustrating capability beyond RGB-only baselines.</p>
+      <div class="gallery" id="thermalGallery"></div>
+    </section>
+
+    <section>
+      <h2>Citation</h2>
+      <pre id="bibtex">@misc{uysal2026aerialmultimodal,
+  title={Aerial Object Detection under Multimodal Conditions},
+  author={Talha Uysal},
+  year={2026},
+  note={Graduation Thesis Project}
+}</pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with reproducible evaluation artifacts from <code>/home/ilaha/thesis/output_final/external_eval</code>.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
