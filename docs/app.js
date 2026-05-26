@@ -49,6 +49,13 @@ function buildCharts(d) {
   });
 }
 
+
+function buildModelMap(d){
+  const root=document.getElementById('modelMap');
+  const rows=Object.entries(d.classes).map(([k,v])=>`<tr><td>${k}</td><td>${v.ours_name||'Ours'}</td><td>${v.comparator_name||v.comparator||'-'}</td></tr>`).join('');
+  root.innerHTML=`<table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;border-bottom:1px solid #ddd">Class</th><th style="text-align:left;border-bottom:1px solid #ddd">Ours</th><th style="text-align:left;border-bottom:1px solid #ddd">Comparator</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
 function buildRGBGalleries(d) {
   const root = document.getElementById('rgbGalleries');
   const blocks = [];
@@ -73,6 +80,7 @@ function buildThermal(d) {
 loadData().then(d => {
   buildCards(d);
   buildCharts(d);
+  buildModelMap(d);
   buildRGBGalleries(d);
   buildThermal(d);
 });

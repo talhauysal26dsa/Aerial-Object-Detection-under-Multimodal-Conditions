@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340">
+  <defs>
+    <style>
+      .b{fill:#fff;stroke:#284b63;stroke-width:2;rx:14;ry:14}
+      .t{font:600 20px 'Space Grotesk',sans-serif;fill:#1f2933}
+      .s{font:500 14px 'Space Grotesk',sans-serif;fill:#52606d}
+      .a{stroke:#0f766e;stroke-width:4;fill:none;marker-end:url(#m)}
+    </style>
+    <marker id="m" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+  <rect x="30" y="90" width="230" height="150" class="b"/>
+  <text x="50" y="128" class="t">Dataset Build</text>
+  <text x="50" y="154" class="s">Train: full mixed</text>
+  <text x="50" y="176" class="s">Val/Test: fixed equal split</text>
+  <text x="50" y="198" class="s">Leakage-free filtering</text>
+
+  <rect x="320" y="90" width="230" height="150" class="b"/>
+  <text x="340" y="128" class="t">Warmup + HPO</text>
+  <text x="340" y="154" class="s">YOLOv8x / YOLO11x</text>
+  <text x="340" y="176" class="s">Short warmup sanity checks</text>
+  <text x="340" y="198" class="s">Targeted hyperparameter search</text>
+
+  <rect x="610" y="90" width="230" height="150" class="b"/>
+  <text x="630" y="128" class="t">Final Training</text>
+  <text x="630" y="154" class="s">Best model: YOLOv8x (ours)</text>
+  <text x="630" y="176" class="s">RGB + white-hot thermal eval</text>
+  <text x="630" y="198" class="s">Class-wise and modality-wise metrics</text>
+
+  <rect x="900" y="90" width="270" height="150" class="b"/>
+  <text x="920" y="128" class="t">External Benchmark</text>
+  <text x="920" y="154" class="s">Drone / Airplane / Bird / Helicopter</text>
+  <text x="920" y="176" class="s">Overlap-class fair comparisons</text>
+  <text x="920" y="198" class="s">Qualitative miss-vs-hit visual evidence</text>
+
+  <path d="M260 165 L320 165" class="a"/>
+  <path d="M550 165 L610 165" class="a"/>
+  <path d="M840 165 L900 165" class="a"/>
+</svg>

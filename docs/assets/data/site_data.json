@@ -11,7 +11,9 @@
         "assets/images/rgb_adv/airplane_1.jpg",
         "assets/images/rgb_adv/airplane_2.jpg",
         "assets/images/rgb_adv/airplane_3.jpg"
-      ]
+      ],
+      "ours_name": "Ours (YOLOv8x tuned)",
+      "comparator_name": "YOLOv8m Plane (Keremberke)"
     },
     "bird": {
       "ours_ap5095": 0.4242773373632965,
@@ -23,7 +25,9 @@
         "assets/images/rgb_adv/bird_1.jpg",
         "assets/images/rgb_adv/bird_2.jpg",
         "assets/images/rgb_adv/bird_3.jpg"
-      ]
+      ],
+      "ours_name": "Ours (YOLOv8x tuned)",
+      "comparator_name": "YOLOv8m COCO"
     },
     "drone": {
       "ours_ap5095": 0.5359603770627488,
@@ -35,7 +39,9 @@
         "assets/images/rgb_adv/drone_1.jpg",
         "assets/images/rgb_adv/drone_2.jpg",
         "assets/images/rgb_adv/drone_3.jpg"
-      ]
+      ],
+      "ours_name": "Ours (YOLOv8x tuned)",
+      "comparator_name": "Drone-Detection YOLOv8x"
     },
     "helicopter": {
       "ours_ap5095": 0.5487940890129537,
@@ -47,7 +53,9 @@
         "assets/images/rgb_adv/helicopter_1.jpg",
         "assets/images/rgb_adv/helicopter_2.jpg",
         "assets/images/rgb_adv/helicopter_3.jpg"
-      ]
+      ],
+      "ours_name": "Ours (YOLOv8x tuned)",
+      "comparator_name": "AeroDetect YOLO11n"
     }
   },
   "rgb_overall": {
