@@ -60,7 +60,7 @@ function buildRGBGalleries(d) {
   const root = document.getElementById('rgbGalleries');
   const blocks = [];
   for (const [cls, info] of Object.entries(d.classes)) {
-    const imgs = info.advantage_images || [];
+    const imgs = info.compare_images || info.advantage_images || [];
     if (!imgs.length) continue;
     blocks.push(`
       <div class="gallery-wrap">
@@ -70,6 +70,13 @@ function buildRGBGalleries(d) {
     `);
   }
   root.innerHTML = blocks.join('');
+}
+
+
+function buildThermalSmall(d){
+  const root=document.getElementById('thermalSmallGallery');
+  if(!root) return;
+  root.innerHTML=(d.thermal_small_showcase||[]).map(x=>`<img src="${x.image}" alt="thermal small showcase">`).join('');
 }
 
 function buildThermal(d) {
@@ -82,5 +89,6 @@ loadData().then(d => {
   buildCharts(d);
   buildModelMap(d);
   buildRGBGalleries(d);
+  buildThermalSmall(d);
   buildThermal(d);
 });

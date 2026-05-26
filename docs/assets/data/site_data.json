@@ -13,7 +13,12 @@
         "assets/images/rgb_adv/airplane_3.jpg"
       ],
       "ours_name": "Ours (YOLOv8x tuned)",
-      "comparator_name": "YOLOv8m Plane (Keremberke)"
+      "comparator_name": "YOLOv8m Plane (Keremberke)",
+      "compare_images": [
+        "assets/images/rgb_compare/airplane_1.jpg",
+        "assets/images/rgb_compare/airplane_2.jpg",
+        "assets/images/rgb_compare/airplane_3.jpg"
+      ]
     },
     "bird": {
       "ours_ap5095": 0.4242773373632965,
@@ -27,7 +32,12 @@
         "assets/images/rgb_adv/bird_3.jpg"
       ],
       "ours_name": "Ours (YOLOv8x tuned)",
-      "comparator_name": "YOLOv8m COCO"
+      "comparator_name": "YOLOv8m COCO",
+      "compare_images": [
+        "assets/images/rgb_compare/bird_1.jpg",
+        "assets/images/rgb_compare/bird_2.jpg",
+        "assets/images/rgb_compare/bird_3.jpg"
+      ]
     },
     "drone": {
       "ours_ap5095": 0.5359603770627488,
@@ -41,7 +51,12 @@
         "assets/images/rgb_adv/drone_3.jpg"
       ],
       "ours_name": "Ours (YOLOv8x tuned)",
-      "comparator_name": "Drone-Detection YOLOv8x"
+      "comparator_name": "Drone-Detection YOLOv8x",
+      "compare_images": [
+        "assets/images/rgb_compare/drone_1.jpg",
+        "assets/images/rgb_compare/drone_2.jpg",
+        "assets/images/rgb_compare/drone_3.jpg"
+      ]
     },
     "helicopter": {
       "ours_ap5095": 0.5487940890129537,
@@ -55,7 +70,12 @@
         "assets/images/rgb_adv/helicopter_3.jpg"
       ],
       "ours_name": "Ours (YOLOv8x tuned)",
-      "comparator_name": "AeroDetect YOLO11n"
+      "comparator_name": "AeroDetect YOLO11n",
+      "compare_images": [
+        "assets/images/rgb_compare/helicopter_1.jpg",
+        "assets/images/rgb_compare/helicopter_2.jpg",
+        "assets/images/rgb_compare/helicopter_3.jpg"
+      ]
     }
   },
   "rgb_overall": {
@@ -108,6 +128,32 @@
     {
       "image": "assets/images/thermal_showcase/thermal_6.jpg",
       "score": 0.93212890625
+    }
+  ],
+  "thermal_small_showcase": [
+    {
+      "image": "assets/images/thermal_small_showcase/thermal_small_1.jpg",
+      "best_tp_score": 0.90380859375
+    },
+    {
+      "image": "assets/images/thermal_small_showcase/thermal_small_2.jpg",
+      "best_tp_score": 0.8916015625
+    },
+    {
+      "image": "assets/images/thermal_small_showcase/thermal_small_3.jpg",
+      "best_tp_score": 0.89013671875
+    },
+    {
+      "image": "assets/images/thermal_small_showcase/thermal_small_4.jpg",
+      "best_tp_score": 0.8896484375
+    },
+    {
+      "image": "assets/images/thermal_small_showcase/thermal_small_5.jpg",
+      "best_tp_score": 0.888671875
+    },
+    {
+      "image": "assets/images/thermal_small_showcase/thermal_small_6.jpg",
+      "best_tp_score": 0.8818359375
     }
   ]
 }
