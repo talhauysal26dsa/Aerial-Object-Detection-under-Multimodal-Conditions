@@ -1,40 +1,42 @@
 :root {
-  --bg: #f3efe5;
-  --panel: #fffdf8;
-  --ink: #1f2933;
-  --muted: #52606d;
-  --accent: #0f766e;
-  --accent2: #b45309;
-  --line: #dfd7c6;
+  --bg: #f6f8fb;
+  --panel: #ffffff;
+  --ink: #1f2937;
+  --muted: #4b5563;
+  --accent: #0b5ed7;
+  --accent2: #0f766e;
+  --line: #dbe2ea;
 }
 * { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   color: var(--ink);
-  background: radial-gradient(circle at 10% 0%, #fff7e6 0%, #f2eee4 45%, #ece6d7 100%);
+  background: var(--bg);
 }
 .hero {
-  padding: 72px 20px 56px;
-  background: linear-gradient(135deg, #12343b 0%, #284b63 70%, #4d7c8a 100%);
-  color: #fff;
+  padding: 54px 20px 38px;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f5fb 100%);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
 }
 .hero-inner, main, footer { max-width: 1100px; margin: 0 auto; }
-.kicker { text-transform: uppercase; letter-spacing: .11em; opacity: .85; font-size: 12px; }
-h1 { font-size: clamp(2rem, 4vw, 3.4rem); margin: 10px 0; }
-.lead { max-width: 900px; color: #e7eef2; line-height: 1.6; }
+.kicker { text-transform: uppercase; letter-spacing: .11em; color: var(--accent); font-size: 12px; font-weight: 700; }
+h1 { font-size: clamp(2rem, 4vw, 3.2rem); margin: 10px 0; }
+.lead { max-width: 920px; color: var(--muted); line-height: 1.65; }
 main { padding: 26px 20px 60px; }
 section {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 22px;
   margin: 14px 0;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.04);
 }
 h2 {
   margin-top: 0;
   font-family: 'Source Serif 4', serif;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
 .card { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #fff; }
@@ -44,6 +46,18 @@ canvas { width: 100% !important; max-height: 420px; }
 .gallery-wrap h3 { margin: 8px 0 6px; font-size: 1rem; color: var(--accent2); }
 .gallery { display: grid; grid-template-columns: 1fr; gap: 14px; }
 .gallery img { width: 100%; border-radius: 12px; border: 1px solid var(--line); display:block; }
+.demo-video {
+  width: 100%;
+  max-width: 1100px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #000;
+}
+.muted-text {
+  color: var(--muted);
+}
+a { color: var(--accent); }
+a:hover { opacity: 0.85; }
 pre {
   background: #111827;
   color: #e5e7eb;

@@ -155,5 +155,6 @@
       "image": "assets/images/thermal_small_showcase/thermal_small_6.jpg",
       "best_tp_score": 0.8818359375
     }
-  ]
+  ],
+  "compare_note": "Strict selection: same frame, ours has at least one true positive (IoU>=0.50, conf>=0.50), comparator has zero true positive. Only predictions with conf>=0.50 are shown; no ground-truth boxes are drawn."
 }
