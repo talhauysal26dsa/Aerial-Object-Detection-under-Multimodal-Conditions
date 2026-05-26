@@ -66,6 +66,8 @@
         <a href="assets/videos/heli_detection_ours.mp4">Videoyu indir</a>.
       </video>
       <p class="muted-text">Video açılmazsa direkt bağlantı: <a href="assets/videos/heli_detection_ours.mp4">heli_detection_ours.mp4</a></p>
+      <p class="muted-text">Codec uyumluluk için (sunucuda tek sefer):</p>
+      <pre>ffmpeg -i heli_video.mp4 -c:v libx264 -profile:v baseline -level 3.1 -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 128k docs/assets/videos/heli_detection_ours.mp4</pre>
     </section>
 
     <section>
@@ -87,6 +89,14 @@
   year={2026},
   note={Graduation Thesis Project}
 }</pre>
+      <h3>External Model References</h3>
+      <ul>
+        <li><a href="https://huggingface.co/keremberke/yolov8m-plane-detection" target="_blank" rel="noopener noreferrer">Keremberke YOLOv8m Plane Detection (HF)</a></li>
+        <li><a href="https://huggingface.co/Doguilmak/Drone_Detection_YoloV8x" target="_blank" rel="noopener noreferrer">Doguilmak Drone Detection YOLOv8x (HF)</a></li>
+        <li><a href="https://github.com/AksharKher-30/AeroDetect" target="_blank" rel="noopener noreferrer">AeroDetect (GitHub)</a></li>
+        <li><a href="https://github.com/ultralytics/ultralytics" target="_blank" rel="noopener noreferrer">Ultralytics YOLO (COCO baselines, GitHub)</a></li>
+        <li><a href="https://huggingface.co/Javvanny/yolov8m_flying_objects_detection" target="_blank" rel="noopener noreferrer">Javvanny YOLOv8m Flying Objects (HF)</a></li>
+      </ul>
     </section>
   </main>
 

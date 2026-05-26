@@ -76,12 +76,22 @@ function buildRGBGalleries(d) {
 function buildThermalSmall(d){
   const root=document.getElementById('thermalSmallGallery');
   if(!root) return;
-  root.innerHTML=(d.thermal_small_showcase||[]).map(x=>`<img src="${x.image}" alt="thermal small showcase">`).join('');
+  root.innerHTML=(d.thermal_small_showcase||[]).map(x=>`
+    <figure class="thumb">
+      <img src="${x.image}" alt="thermal small showcase">
+      <figcaption>class: <strong>${x.class_name || 'unknown'}</strong> | conf: ${(x.class_conf ?? x.best_tp_score ?? 0).toFixed(2)}</figcaption>
+    </figure>
+  `).join('');
 }
 
 function buildThermal(d) {
   const root = document.getElementById('thermalGallery');
-  root.innerHTML = (d.thermal_showcase || []).map(x => `<img src="${x.image}" alt="thermal showcase">`).join('');
+  root.innerHTML = (d.thermal_showcase || []).map(x => `
+    <figure class="thumb">
+      <img src="${x.image}" alt="thermal showcase">
+      <figcaption>class: <strong>${x.class_name || 'unknown'}</strong> | conf: ${(x.class_conf ?? x.score ?? 0).toFixed(2)}</figcaption>
+    </figure>
+  `).join('');
 }
 
 loadData().then(d => {
