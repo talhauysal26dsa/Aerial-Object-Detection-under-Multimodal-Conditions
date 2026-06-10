@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Video Inference Compare</title>
+  <style>
+    body{margin:0;padding:20px;background:#0b1020;color:#e5e7eb;font-family:Arial,sans-serif}
+    .group{border:1px solid #334155;border-radius:10px;padding:12px;margin-bottom:12px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .panel{border:1px solid #334155;border-radius:8px;padding:8px;background:#111827}
+    video{width:100%;max-height:420px;background:#000;border-radius:6px}
+    .controls{margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap}
+    button{padding:7px 10px;background:#111827;color:#e5e7eb;border:1px solid #334155;border-radius:8px;cursor:pointer}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <h2>External vs Ours - Side by Side</h2>
+  <div class="controls">
+    <button id="playAll">Tümünü Oynat</button>
+    <button id="pauseAll">Tümünü Durdur</button>
+  </div>
+  <div id="root"></div>
+<script>
+const DATA=[
+ {name:'airplane', ours:'./airplane/ours/annotated_web.mp4', ext:'./airplane/external_keremberke_plane/annotated_web.mp4', tag:'keremberke_plane'},
+ {name:'airplane2', ours:'./airplane2/ours/annotated_web.mp4', ext:'./airplane2/external_keremberke_plane/annotated_web.mp4', tag:'keremberke_plane'},
+ {name:'bird', ours:'./bird/ours/annotated_web.mp4', ext:'./bird/external_coco_yolov8m/annotated_web.mp4', tag:'coco_yolov8m'},
+ {name:'drone', ours:'./drone/ours/annotated_web.mp4', ext:'./drone/external_doguilmak_drone/annotated_web.mp4', tag:'doguilmak_drone'}
+];
+const root=document.getElementById('root');
+const videos=[];
+for(const d of DATA){
+  const g=document.createElement('div'); g.className='group'; g.id=d.name;
+  g.innerHTML=`<div><b>${d.name}</b></div><div class="grid">
+    <div class="panel"><div>Ours</div><video controls preload="metadata" src="${d.ours}"></video></div>
+    <div class="panel"><div>External (${d.tag})</div><video controls preload="metadata" src="${d.ext}"></video></div>
+  </div>`;
+  const [v1,v2]=g.querySelectorAll('video');
+  const sync=(a,b)=>{a.addEventListener('play',()=>{if(b.paused)b.play().catch(()=>{});});a.addEventListener('pause',()=>{if(!b.paused)b.pause();});a.addEventListener('seeking',()=>{b.currentTime=a.currentTime;});};
+  sync(v1,v2); sync(v2,v1); videos.push(v1,v2);
+  root.appendChild(g);
+}
+document.getElementById('playAll').onclick=()=>videos.forEach(v=>v.play().catch(()=>{}));
+document.getElementById('pauseAll').onclick=()=>videos.forEach(v=>v.pause());
+</script>
+</body>
+</html>
