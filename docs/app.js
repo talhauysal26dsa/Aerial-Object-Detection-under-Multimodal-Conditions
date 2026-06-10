@@ -72,6 +72,69 @@ function buildRGBGalleries(d) {
   root.innerHTML = blocks.join('');
 }
 
+function buildVideoCompare() {
+  const root = document.getElementById('videoCompare');
+  if (!root) return;
+
+  const data = [
+    {
+      name: 'airplane',
+      ours: 'video_inference_compare/airplane/ours/annotated_web.mp4',
+      external: 'video_inference_compare/airplane/external_keremberke_plane/annotated_web.mp4',
+      label: 'External (Keremberke plane)'
+    },
+    {
+      name: 'airplane2',
+      ours: 'video_inference_compare/airplane2/ours/annotated_web.mp4',
+      external: 'video_inference_compare/airplane2/external_keremberke_plane/annotated_web.mp4',
+      label: 'External (Keremberke plane)'
+    },
+    {
+      name: 'bird',
+      ours: 'video_inference_compare/bird/ours/annotated_web.mp4',
+      external: 'video_inference_compare/bird/external_coco_yolov8m/annotated_web.mp4',
+      label: 'External (COCO YOLOv8m)'
+    }
+  ];
+
+  const videos = [];
+  root.className = 'compare-root';
+  root.innerHTML = data.map(item => `
+    <div class="compare-group" id="${item.name}">
+      <h3>${item.name}</h3>
+      <div class="compare-grid">
+        <div class="compare-panel">
+          <div class="compare-label">Ours</div>
+          <video class="compare-video" controls playsinline preload="metadata" src="${item.ours}"></video>
+        </div>
+        <div class="compare-panel">
+          <div class="compare-label">${item.label}</div>
+          <video class="compare-video" controls playsinline preload="metadata" src="${item.external}"></video>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  root.querySelectorAll('video').forEach(v => videos.push(v));
+
+  const sync = (a, b) => {
+    a.addEventListener('play', () => { if (b.paused) b.play().catch(() => {}); });
+    a.addEventListener('pause', () => { if (!b.paused) b.pause(); });
+    a.addEventListener('seeking', () => { b.currentTime = a.currentTime; });
+  };
+
+  for (let i = 0; i < data.length; i++) {
+    const left = videos[i * 2];
+    const right = videos[i * 2 + 1];
+    sync(left, right);
+    sync(right, left);
+  }
+
+  const playAll = document.getElementById('playCompareAll');
+  const pauseAll = document.getElementById('pauseCompareAll');
+  if (playAll) playAll.onclick = () => videos.forEach(v => v.play().catch(() => {}));
+  if (pauseAll) pauseAll.onclick = () => videos.forEach(v => v.pause());
+}
 
 function buildThermalSmall(d){
   const root=document.getElementById('thermalSmallGallery');
@@ -99,6 +162,7 @@ loadData().then(d => {
   buildCharts(d);
   buildModelMap(d);
   buildRGBGalleries(d);
+  buildVideoCompare();
   buildThermalSmall(d);
   buildThermal(d);
 });
